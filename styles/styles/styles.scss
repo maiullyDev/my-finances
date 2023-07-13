@@ -1,0 +1,21 @@
+@import "../variaveis/variaveis.scss";
+
+body {
+  .header {
+    button {
+      background-color: $amarelo;
+      color: $preto;
+
+      padding: 12px 32px;
+      border-radius: 5px;
+    }
+
+    background-color: $azul-escuro-1;
+
+    padding: 3rem 10rem 9.375rem 10rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

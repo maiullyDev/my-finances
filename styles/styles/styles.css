@@ -1,1 +1,13 @@
-/*# sourceMappingURL=styles.css.map */
+body .header {
+  background-color: #0b1923;
+  padding: 3rem 10rem 9.375rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .header button {
+  background-color: #ffc843;
+  color: #0b1923;
+  padding: 12px 32px;
+  border-radius: 5px;
+}/*# sourceMappingURL=styles.css.map */
