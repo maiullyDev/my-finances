@@ -15,7 +15,7 @@ body {
     }
 
     padding-top: 3rem;
-    padding-bottom: 9.375rem;
+    padding-bottom: 2.5rem;
 
     display: flex;
     align-items: center;
@@ -65,6 +65,9 @@ body {
 
     max-width: 1240px;
     margin: 0 auto;
+
+    position: relative;
+    top: 2.5rem;
   }
 
   background-color: $azul-escuro-1;
@@ -128,6 +131,7 @@ body {
 
         padding: 20px 32px;
         background-color: $branco;
+        border-radius: 5px;
       }
     }
 
