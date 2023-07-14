@@ -1,13 +1,120 @@
-body .header {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+body {
+  background-color: #f0f2f5;
+}
+
+.banner {
   background-color: #0b1923;
-  padding: 3rem 10rem 9.375rem 10rem;
+}
+.banner .header {
+  padding-top: 3rem;
+  padding-bottom: 9.375rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
 }
-body .header button {
+.banner .header button {
   background-color: #ffc843;
   color: #0b1923;
   padding: 12px 32px;
   border-radius: 5px;
+}
+.banner .cards {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.banner .cards .card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 25.19px 99px 18.13px 32px;
+  border-radius: 5px;
+}
+.banner .cards .card h1 {
+  color: #fff;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 16px;
+}
+.banner .cards .card div {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  gap: 10px;
+}
+.banner .cards .verde {
+  background-color: #219653;
+}
+.banner .cards .vermelho {
+  background-color: #eb5757;
+}
+.banner .cards .azul {
+  background-color: #203047;
+}
+
+.table div {
+  padding-top: 6.5rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.table div h2 {
+  color: #0b1923;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+}
+.table div input {
+  color: #969cb2;
+  background-color: #ffffff;
+  padding: 16px 163px 16px 20px;
+  border-radius: 5px;
+}
+.table div input::-moz-placeholder {
+  color: #969cb2;
+}
+.table div input::placeholder {
+  color: #969cb2;
+}
+.table table {
+  border-spacing: 0 8px;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.table table thead td {
+  color: #969cb2;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 20px 32px;
+}
+.table table tbody .title {
+  color: #0b1923;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+.table table tbody td {
+  color: #969cb2;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 20px 32px;
+  background-color: #ffffff;
 }/*# sourceMappingURL=styles.css.map */

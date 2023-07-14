@@ -1,6 +1,10 @@
 @import "../variaveis/variaveis.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 body {
+  background-color: $fundo-cinza;
+}
+.banner {
   .header {
     button {
       background-color: $amarelo;
@@ -10,12 +14,127 @@ body {
       border-radius: 5px;
     }
 
-    background-color: $azul-escuro-1;
-
-    padding: 3rem 10rem 9.375rem 10rem;
+    padding-top: 3rem;
+    padding-bottom: 9.375rem;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .cards {
+    .card {
+      h1 {
+        color: #fff;
+        font-family: Poppins;
+        font-weight: 400;
+        font-size: 16px;
+      }
+      div {
+        color: #fff;
+        font-family: Poppins;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+
+        display: flex;
+        gap: 10px;
+      }
+
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+
+      padding: 25.19px 99px 18.13px 32px;
+      border-radius: 5px;
+    }
+    .verde {
+      background-color: $verde;
+    }
+    .vermelho {
+      background-color: $vermelho;
+    }
+    .azul {
+      background-color: $azul-escuro-2;
+    }
+
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  background-color: $azul-escuro-1;
+}
+.table {
+  div {
+    h2 {
+      color: $preto;
+      font-family: Poppins;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 600;
+    }
+    input {
+      color: $fonte-cinza;
+      background-color: $branco;
+      padding: 16px 163px 16px 20px;
+      border-radius: 5px;
+
+      &::placeholder {
+        color: $fonte-cinza;
+      }
+    }
+
+    padding-top: 6.5rem;
+    padding-bottom: 3rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  table {
+    thead {
+      td {
+        color: $fonte-cinza;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+
+        padding: 20px 32px;
+      }
+    }
+    tbody {
+      .title {
+        color: $preto;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+      }
+      td {
+        color: #969cb2;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        padding: 20px 32px;
+        background-color: $branco;
+      }
+    }
+
+    border-spacing: 0 8px;
+    width: 100%;
+
+    max-width: 1240px;
+    margin: 0 auto;
   }
 }

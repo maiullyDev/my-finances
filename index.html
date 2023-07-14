@@ -4,43 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Finances</title>
+    <link rel="stylesheet" href="./styles/globalstyles/globalstyles.css" />
+    <link rel="stylesheet" href="./styles/styles/styles.css" />
+    <link rel="stylesheet" href="./styles/variaveis/variaveis.css" />
   </head>
   <body>
     <main>
-      <div>
-        <img
-          src="./assets/logo.png"
-          alt="Logo do My Finances, composta por uma moeda dourada e pelo nome My Finances"
-        />
-        <button></button>
-      </div>
-      <div>
-        <div>
-          <h1></h1>
-          <div>
-            <p></p>
-            <p></p>
+      <section class="banner">
+        <div class="header">
+          <img
+            src="./assets/logo.png"
+            alt="Logo do My Finances, composta por uma moeda dourada e pelo nome My Finances"
+          />
+          <button>Nova transação</button>
+        </div>
+        <div class="cards">
+          <div class="card verde">
+            <h1>Entradas</h1>
+            <div>
+              <p class="moneySymbol">R$</p>
+              <p class="value">17.400,00</p>
+            </div>
+          </div>
+          <div class="card vermelho">
+            <h1>Saídas</h1>
+            <div>
+              <p class="moneySymbol">R$</p>
+              <p class="value">1.259,00</p>
+            </div>
+          </div>
+          <div class="card azul">
+            <h1>Total</h1>
+            <div>
+              <p class="moneySymbol">R$</p>
+              <p class="value">16.141,00</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
+      </section>
+      <section class="table">
         <div>
-          <h1></h1>
-          <div>
-            <p></p>
-            <p></p>
-          </div>
+          <h2>Suas transações</h2>
+          <input type="text" placeholder="Digite para filtrar..." />
         </div>
-      </div>
-      <div>
-        <div>
-          <h1></h1>
-          <div>
-            <p></p>
-            <p></p>
-          </div>
-        </div>
-      </div>
+        <table>
+          <thead>
+            <tr>
+              <td>Título</td>
+              <td>Preço</td>
+              <td>Categoria</td>
+              <td>Data</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="title">Desenvolvedor Web/Mobile</td>
+              <td>R$ 12.000,00</td>
+              <td>Salário</td>
+              <td>01/09/2022</td>
+            </tr>
+            <tr>
+              <td class="title">Pizza</td>
+              <td>- R$ 59,00</td>
+              <td>Alimentação</td>
+              <td>03/09/2022</td>
+            </tr>
+            <tr>
+              <td class="title">Aluguel do apartamento</td>
+              <td>- R$ 1.500,00</td>
+              <td>Casa</td>
+              <td>27/08/2022</td>
+            </tr>
+            <tr>
+              <td class="title">Frella</td>
+              <td>R$ 5.400,00</td>
+              <td>Salário</td>
+              <td>15/03/2021</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
   </body>
 </html>
