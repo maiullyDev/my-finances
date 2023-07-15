@@ -4,4 +4,17 @@
   padding: 0;
   margin: 0;
   border: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ffc843;
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f0f2f5;
 }/*# sourceMappingURL=globalstyles.css.map */

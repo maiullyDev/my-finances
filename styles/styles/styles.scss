@@ -8,10 +8,18 @@ body {
   .header {
     button {
       background-color: $amarelo;
+
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 600;
       color: $preto;
 
       padding: 12px 32px;
       border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: $amarelo-escuro;
     }
 
     padding-top: 3rem;
@@ -131,7 +139,6 @@ body {
 
         padding: 20px 32px;
         background-color: $branco;
-        border-radius: 5px;
       }
     }
 
@@ -140,5 +147,128 @@ body {
 
     max-width: 1240px;
     margin: 0 auto;
+  }
+  padding-bottom: 40px;
+}
+.modal {
+  display: none;
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .content {
+    h2 {
+      font-family: Poppins;
+      font-size: 22px;
+      font-weight: 600;
+      color: $preto;
+
+      margin-bottom: 40px;
+      width: 100%;
+    }
+    .button-close {
+      background-color: transparent;
+      padding: 2px 10px;
+      border-radius: 50px;
+
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 600;
+      color: #495057;
+
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+    form {
+      .fieldForm {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 10px;
+
+        label {
+          font-family: Poppins;
+          font-size: 16px;
+          font-weight: 400;
+          margin-bottom: 4px;
+          color: $preto;
+        }
+
+        input {
+          height: 3rem;
+          border-radius: 5px;
+        }
+      }
+      .name {
+        width: 500px;
+        input {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      .price {
+        width: 300px;
+        input {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      .category {
+        width: 400px;
+        input {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      .data {
+        width: 200px;
+        input {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      .button-salvar {
+        background-color: $amarelo;
+        border-radius: 5px;
+
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        color: $preto;
+
+        padding: 12px 120px;
+        margin-top: 50px;
+      }
+      .button-salvar:hover {
+        background-color: $amarelo-escuro;
+      }
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    background-color: $fundo-cinza;
+    border-radius: 8px;
+
+    max-width: 38rem;
+    padding: 30px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-270px, -290px);
   }
 }

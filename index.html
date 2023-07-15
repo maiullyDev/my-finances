@@ -16,7 +16,7 @@
             src="./assets/logo.png"
             alt="Logo do My Finances, composta por uma moeda dourada e pelo nome My Finances"
           />
-          <button>Nova transação</button>
+          <button id="button-novaTransacao">Nova transação</button>
         </div>
         <div class="cards">
           <div class="card verde">
@@ -84,6 +84,35 @@
           </tbody>
         </table>
       </section>
+      <section class="modal">
+        <div class="overlay"></div>
+        <div class="content">
+          <h2>Nova transação</h2>
+          <button class="button-close">x</button>
+          <form>
+            <div>
+              <div class="fieldForm name">
+                <label for="">Nome</label>
+                <input type="text" />
+              </div>
+              <div class="fieldForm price">
+                <label for="">Preço</label>
+                <input type="number" />
+              </div>
+              <div class="fieldForm category">
+                <label for="">Categoria</label>
+                <input type="text" />
+              </div>
+              <div class="fieldForm data">
+                <label for="">Data</label>
+                <input type="date" />
+              </div>
+            </div>
+            <button class="button-salvar">Salvar</button>
+          </form>
+        </div>
+      </section>
     </main>
+    <script src="./js/script.js"></script>
   </body>
 </html>
