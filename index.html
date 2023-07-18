@@ -93,19 +93,23 @@
             <div>
               <div class="fieldForm name">
                 <label for="title">Título</label>
-                <input type="text" name="title" id="title" />
+                <input type="text" name="title" id="title" required />
               </div>
               <div class="fieldForm tipe">
                 <label for="tipe">Tipo</label>
-                <input type="text" name="tipe" id="tipe" />
+                <select name="tipe" id="tipe">
+                  <option value="Entrada">Entrada</option>
+                  <option value="Saída">Saída</option>
+                </select>
+                <!-- <input type="text" name="tipe" id="tipe" /> -->
               </div>
               <div class="fieldForm value">
                 <label for="value">Valor</label>
-                <input type="number" name="value" id="value" />
+                <input type="number" name="value" id="value" required />
               </div>
               <div class="fieldForm data">
                 <label for="data">Data</label>
-                <input type="date" name="data" id="data" />
+                <input type="date" name="data" id="data" required />
               </div>
             </div>
             <button class="button-salvar" type="submit">Salvar</button>

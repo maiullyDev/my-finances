@@ -206,6 +206,10 @@ body {
           border-radius: 5px;
           padding-left: 10px;
           padding-right: 10px;
+
+          font-family: Poppins;
+          font-size: 14px;
+          font-weight: 400;
         }
       }
       .name {
@@ -219,10 +223,19 @@ body {
         }
       }
       .tipe {
-        width: 400px;
-        input {
-          padding-left: 10px;
-          padding-right: 10px;
+        width: 200px;
+        #tipe {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          border-radius: 5px;
+
+          height: 3rem;
+          padding: 10px 10px;
+
+          font-family: Poppins;
+          font-size: 14px;
+          font-weight: 400;
         }
       }
       .data {

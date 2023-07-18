@@ -1,4 +1,4 @@
-// Open Modal
+// Open Modal:
 const buttonNovaTransacao = document.querySelector("#button-novaTransacao");
 
 const buttonClose = document.querySelector(".button-close");
@@ -11,11 +11,14 @@ buttonNovaTransacao.addEventListener("click", () => {
 
 buttonClose.addEventListener("click", () => {
   modalNovaTransacao.style.display = "none";
+  transactionForm.reset();
 });
 
-// Saving form information
+// Saving form information:
 const transactionForm = document.querySelector(".transactionForm");
+const transactionsArray = [];
 
+// Evento submit:
 transactionForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(transactionForm);
@@ -26,7 +29,20 @@ transactionForm.addEventListener("submit", (event) => {
     transactionObject[campo[0]] = campo[1];
   }
 
-  console.log(transactionObject);
+  // Adicionando nova transação ao array de transações:
+  transactionsArray.push(transactionObject);
+  console.log(transactionsArray);
+
+  // Transformando o objeto em um JSON e salvando no localStorage:
+  const transactionsArrayString = JSON.stringify(transactionsArray);
+  localStorage.setItem("transactionsArray", transactionsArrayString);
+
+  // Obtendo dados do localStorage:
+  const transactionObjectObtained = localStorage.getItem("transactionObject");
+  const transactionObjectJs = JSON.parse(transactionObjectObtained);
+  console.log(transactionObjectJs);
+
+  // Adicionando HTML:
   const tbody = document.querySelector("tbody");
   tbody.insertAdjacentHTML(
     "beforeend",
@@ -38,20 +54,14 @@ transactionForm.addEventListener("submit", (event) => {
   </tr>`
   );
 
-  //   for (let campo of formData) {
-  //     // 1. Criar um objeto que representa a transação:
-  //     // Adicionar a transação ao array de transações
-  //     // 3. Renderizar a transação na tabela
-  //     // insertAdjacentHTML
-  //   }
-  //   const tbody = document.querySelector("tbody");
-  //   tbody.insertAdjacentHTML(
-  //     "beforeend",
-  //     `<tr>
-  //   <td class="title">Salário de Desenvolvedor</td>
-  //   <td>Entrada</td>
-  //   <td>R$ 12.000,00</td>
-  //   <td>01/09/2022</td>
-  // </tr>`
-  //   );
+  transactionForm.reset();
 });
+
+window.onload = () => {
+  console.log("carregou");
+  // Usar getItem
+  // Usar parse
+  // Fazer um for em cima do array de transações
+  // Dentro do for, cada elemento da iteração é um objeto
+  // Adicionar código HTML
+};

@@ -198,6 +198,9 @@ body {
   border-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
 }
 .modal .content form .name {
   width: 500px;
@@ -210,11 +213,18 @@ body {
   padding-right: 10px;
 }
 .modal .content form .tipe {
-  width: 400px;
+  width: 200px;
 }
-.modal .content form .tipe input {
-  padding-left: 10px;
-  padding-right: 10px;
+.modal .content form .tipe #tipe {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 5px;
+  height: 3rem;
+  padding: 10px 10px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
 }
 .modal .content form .data {
   width: 200px;
