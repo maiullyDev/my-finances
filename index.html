@@ -89,26 +89,26 @@
         <div class="content">
           <h2>Nova transação</h2>
           <button class="button-close">x</button>
-          <form>
+          <form class="transactionForm">
             <div>
               <div class="fieldForm name">
-                <label for="">Nome</label>
-                <input type="text" />
+                <label for="title">Título</label>
+                <input type="text" name="title" id="title" />
               </div>
-              <div class="fieldForm price">
-                <label for="">Preço</label>
-                <input type="number" />
+              <div class="fieldForm tipe">
+                <label for="tipe">Tipo</label>
+                <input type="text" name="tipe" id="tipe" />
               </div>
-              <div class="fieldForm category">
-                <label for="">Categoria</label>
-                <input type="text" />
+              <div class="fieldForm value">
+                <label for="value">Valor</label>
+                <input type="number" name="value" id="value" />
               </div>
               <div class="fieldForm data">
-                <label for="">Data</label>
-                <input type="date" />
+                <label for="data">Data</label>
+                <input type="date" name="data" id="data" />
               </div>
             </div>
-            <button class="button-salvar">Salvar</button>
+            <button class="button-salvar" type="submit">Salvar</button>
           </form>
         </div>
       </section>

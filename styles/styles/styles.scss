@@ -204,23 +204,21 @@ body {
         input {
           height: 3rem;
           border-radius: 5px;
-        }
-      }
-      .name {
-        width: 500px;
-        input {
           padding-left: 10px;
           padding-right: 10px;
         }
       }
-      .price {
+      .name {
+        width: 500px;
+      }
+      .value {
         width: 300px;
         input {
           padding-left: 10px;
           padding-right: 10px;
         }
       }
-      .category {
+      .tipe {
         width: 400px;
         input {
           padding-left: 10px;
@@ -229,10 +227,6 @@ body {
       }
       .data {
         width: 200px;
-        input {
-          padding-left: 10px;
-          padding-right: 10px;
-        }
       }
       .button-salvar {
         background-color: $amarelo;
