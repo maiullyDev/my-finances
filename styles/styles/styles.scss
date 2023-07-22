@@ -47,6 +47,8 @@ body {
         font-style: normal;
         font-weight: 400;
 
+        width: 221px;
+
         display: flex;
         gap: 10px;
       }
@@ -55,6 +57,7 @@ body {
       flex-direction: column;
       gap: 14px;
 
+      // width: 352px;
       padding: 25.19px 99px 18.13px 32px;
       border-radius: 5px;
     }
@@ -222,9 +225,9 @@ body {
           padding-right: 10px;
         }
       }
-      .tipe {
+      .type {
         width: 200px;
-        #tipe {
+        #type {
           appearance: none;
           -webkit-appearance: none;
           -moz-appearance: none;

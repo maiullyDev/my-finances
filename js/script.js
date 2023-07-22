@@ -9,14 +9,26 @@ buttonNovaTransacao.addEventListener("click", () => {
   modalNovaTransacao.style.display = "block";
 });
 
-buttonClose.addEventListener("click", () => {
+const closeModalAction = () => {
   modalNovaTransacao.style.display = "none";
   transactionForm.reset();
-});
+};
+
+buttonClose.addEventListener("click", closeModalAction);
 
 // Saving form information:
 const transactionForm = document.querySelector(".transactionForm");
-const transactionsArray = [];
+let transactionsArray = [];
+
+// Variáveis globais que recebem o total de saídas e de entradas:
+let totalSaidas = 0;
+let totalEntradas = 0;
+let totalEntradasEsaidas = 0;
+
+// Cards de entradas e saídas:
+const cardIncomes = document.querySelector(".cardGreen");
+const cardOutcomes = document.querySelector(".cardRed");
+const cardTotal = document.querySelector(".cardTotal");
 
 // Evento submit:
 transactionForm.addEventListener("submit", (event) => {
@@ -31,16 +43,10 @@ transactionForm.addEventListener("submit", (event) => {
 
   // Adicionando nova transação ao array de transações:
   transactionsArray.push(transactionObject);
-  console.log(transactionsArray);
 
-  // Transformando o objeto em um JSON e salvando no localStorage:
+  // Transformando o array em um JSON e salvando no localStorage:
   const transactionsArrayString = JSON.stringify(transactionsArray);
   localStorage.setItem("transactionsArray", transactionsArrayString);
-
-  // Obtendo dados do localStorage:
-  const transactionObjectObtained = localStorage.getItem("transactionObject");
-  const transactionObjectJs = JSON.parse(transactionObjectObtained);
-  console.log(transactionObjectJs);
 
   // Adicionando HTML:
   const tbody = document.querySelector("tbody");
@@ -48,20 +54,80 @@ transactionForm.addEventListener("submit", (event) => {
     "beforeend",
     `<tr>
     <td class="title">${transactionObject.title}</td>
-    <td>${transactionObject.tipe}</td>
+    <td>${transactionObject.type}</td>
     <td>R$ ${transactionObject.value}</td>
     <td>${transactionObject.data}</td>
   </tr>`
   );
 
-  transactionForm.reset();
+  if (transactionObject.type === "Entrada") {
+    totalEntradas += Number(transactionObject.value);
+    cardIncomes.innerHTML = `${totalEntradas.toFixed(2)}`;
+  } else {
+    totalSaidas += Number(transactionObject.value);
+    cardOutcomes.innerHTML = `${totalSaidas.toFixed(2)}`;
+  }
+
+  // Código para atualizar o valor do card que apresenta o valor total
+  totalEntradasEsaidas = totalEntradas - totalSaidas;
+  cardTotal.innerHTML = `${totalEntradasEsaidas.toFixed(2)}`;
+
+  closeModalAction();
 });
 
+// Código usado para obter dados do localStorage e apresentá-los na interface para o usuário.
 window.onload = () => {
-  console.log("carregou");
-  // Usar getItem
-  // Usar parse
-  // Fazer um for em cima do array de transações
-  // Dentro do for, cada elemento da iteração é um objeto
-  // Adicionar código HTML
+  // Código para verificar se já existem dados no localStorage:
+  const transactionsArrayStorage = localStorage.getItem("transactionsArray");
+  if (transactionsArrayStorage !== null) {
+    transactionsArray = JSON.parse(transactionsArrayStorage);
+  }
+
+  // No for, para cada objeto do array de transações, deve ser implementado um código HTML.
+  for (let object of transactionsArray) {
+    const tbody = document.querySelector("tbody");
+    tbody.insertAdjacentHTML(
+      "beforeend",
+      `<tr>
+        <td class="title">${object.title}</td>
+        <td>${object.type}</td>
+        <td>R$ ${Number(object.value).toFixed(2)}</td>
+        <td>${object.data}</td>
+      </tr>`
+    );
+  }
+  calculatingValues();
 };
+
+// Código para somar os valores (independente de ser entrada ou saída)
+function calculatingValues() {
+  let sumSaida = 0;
+  let sumEntrada = 0;
+  transactionsArray.forEach((object) => {
+    object.value = parseInt(object.value);
+    if (object.type === "Saída") {
+      if (object.value > 0) {
+        sumSaida += object.value;
+      } else {
+        sumSaida = 0;
+      }
+    } else if (object.type === "Entrada") {
+      if (object.value > 0) {
+        sumEntrada += object.value;
+      } else {
+        sumEntrada = 0;
+      }
+    }
+  });
+
+  // Atualizando no card de saídas do HTML
+  cardIncomes.innerHTML = `${sumEntrada.toFixed(2)}`;
+  totalEntradas = sumEntrada;
+
+  // Atualizando no card de saídas do HTML
+  cardOutcomes.innerHTML = `${sumSaida.toFixed(2)}`;
+  totalSaidas = sumSaida;
+
+  let totalEntradasEsaidas = sumEntrada - sumSaida;
+  cardTotal.innerHTML = `${totalEntradasEsaidas.toFixed(2)}`;
+}

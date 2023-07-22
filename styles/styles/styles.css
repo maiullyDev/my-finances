@@ -55,6 +55,7 @@ body {
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
+  width: 221px;
   display: flex;
   gap: 10px;
 }
@@ -212,10 +213,10 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
-.modal .content form .tipe {
+.modal .content form .type {
   width: 200px;
 }
-.modal .content form .tipe #tipe {
+.modal .content form .type #type {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
