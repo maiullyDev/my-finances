@@ -2,8 +2,9 @@
 const buttonNovaTransacao = document.querySelector("#button-novaTransacao");
 
 const buttonClose = document.querySelector(".button-close");
-
 const modalNovaTransacao = document.querySelector(".modal");
+const tbody = document.querySelector("tbody");
+const tableContainer = document.querySelector(".tableContainer");
 
 buttonNovaTransacao.addEventListener("click", () => {
   modalNovaTransacao.style.display = "block";
@@ -85,7 +86,6 @@ window.onload = () => {
 
   // No for, para cada objeto do array de transações, deve ser implementado um código HTML.
   for (let object of transactionsArray) {
-    const tbody = document.querySelector("tbody");
     tbody.insertAdjacentHTML(
       "beforeend",
       `<tr>
@@ -131,3 +131,26 @@ function calculatingValues() {
   let totalEntradasEsaidas = sumEntrada - sumSaida;
   cardTotal.innerHTML = `${totalEntradasEsaidas.toFixed(2)}`;
 }
+
+// Utilizando o evento input para o campo de pesquisa:
+const searchField = document.querySelector("#searchField");
+searchField.addEventListener("input", () => {
+  console.log(searchField.value);
+  const searchFieldResult = transactionsArray.filter((object) => {
+    return object.title.includes(searchField.value);
+  });
+  console.log(searchFieldResult);
+
+  let tbodySearch = ``;
+
+  for (let transaction of searchFieldResult) {
+    tbodySearch += `<tr>
+        <td class="title">${transaction.title}</td>
+        <td>${transaction.type}</td>
+        <td>R$ ${Number(transaction.value).toFixed(2)}</td>
+        <td>${transaction.data}</td>
+      </tr>`;
+  }
+
+  tbody.innerHTML = tbodySearch;
+});
