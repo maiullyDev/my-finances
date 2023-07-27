@@ -8,8 +8,7 @@ body {
   background-color: #0b1923;
 }
 .banner .header {
-  padding-top: 3rem;
-  padding-bottom: 2.5rem;
+  padding: 3rem 2rem 2.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,8 +29,12 @@ body {
 }
 .banner .cards {
   display: flex;
+  gap: 1.5rem;
   justify-content: space-between;
+  flex-wrap: wrap;
   max-width: 1240px;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: 0 auto;
   position: relative;
   top: 2.5rem;
@@ -40,8 +43,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 25.19px 99px 18.13px 32px;
+  padding: 25.19px 2rem 18.13px 2rem;
   border-radius: 5px;
+  flex-grow: 1;
+  flex-basis: 250px;
 }
 .banner .cards .card h1 {
   color: #fff;
@@ -55,7 +60,6 @@ body {
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
-  width: 221px;
   display: flex;
   gap: 10px;
 }
@@ -71,6 +75,8 @@ body {
 
 .table {
   padding-bottom: 40px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .table div {
   padding-top: 6.5rem;
@@ -98,6 +104,11 @@ body {
 }
 .table div input::placeholder {
   color: #969cb2;
+}
+.table .tableContainer {
+  max-width: 100%;
+  overflow-x: auto;
+  padding-top: 0;
 }
 .table table {
   border-spacing: 0 8px;
@@ -242,4 +253,16 @@ body {
 }
 .modal .content form .button-salvar:hover {
   background-color: #ffb400;
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .table div {
+    flex-direction: column;
+    gap: 3rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
