@@ -37,6 +37,8 @@ transactionForm.addEventListener("submit", (event) => {
   const formData = new FormData(transactionForm);
 
   const transactionObject = {};
+  const idTransaction = new Date().getTime();
+  transactionObject.id = idTransaction;
 
   for (let campo of formData) {
     transactionObject[campo[0]] = campo[1];
@@ -56,8 +58,13 @@ transactionForm.addEventListener("submit", (event) => {
     `<tr>
     <td class="title">${transactionObject.title}</td>
     <td>${transactionObject.type}</td>
-    <td>R$ ${transactionObject.value}</td>
+    <td>R$ ${Number(transactionObject.value).toFixed(2)}</td>
     <td>${transactionObject.data}</td>
+    <td><button id='${
+      transactionObject.id
+    }' onclick='removeTransaction(event)'><img id='${
+      transactionObject.id
+    }' src="./assets/delete.png" alt="Excluir transação"/></button></td>
   </tr>`
   );
 
@@ -93,6 +100,11 @@ window.onload = () => {
         <td>${object.type}</td>
         <td>R$ ${Number(object.value).toFixed(2)}</td>
         <td>${object.data}</td>
+        <td><button id='${
+          object.id
+        }' onclick='removeTransaction(event)'><img id='${
+        object.id
+      }' src="./assets/delete.png" alt="Excluir transação"/></button></td>
       </tr>`
     );
   }
@@ -149,8 +161,47 @@ searchField.addEventListener("input", () => {
         <td>${transaction.type}</td>
         <td>R$ ${Number(transaction.value).toFixed(2)}</td>
         <td>${transaction.data}</td>
+        <td><button id='${
+          transaction.id
+        }' onclick='removeTransaction(event)'><img id='${
+      transactionObject.id
+    }' src="./assets/delete.png" alt="Excluir transação"/></button></td>
       </tr>`;
   }
 
   tbody.innerHTML = tbodySearch;
 });
+
+// Função para excluir uma linha da tabela:
+function removeTransaction(event) {
+  const isConfirmed = confirm(
+    "Tem certeza de que deseja excluir essa transação?"
+  );
+  if (isConfirmed) {
+    event.target.parentElement.parentElement.parentElement.remove();
+
+    // Código para encontrar a transação que será excluída e atualizar os valores dos cards:
+    let deletedTransaction = transactionsArray.find(
+      (transaction) => Number(transaction.id) === Number(event.target.id)
+    );
+    deletedTransaction.value = Number(deletedTransaction.value);
+    if (deletedTransaction.type === "Saída") {
+      totalSaidas -= deletedTransaction.value;
+      cardOutcomes.innerHTML = `${totalSaidas.toFixed(2)}`;
+    } else if (deletedTransaction.type === "Entrada") {
+      totalEntradas -= deletedTransaction.value;
+      cardIncomes.innerHTML = `${totalEntradas.toFixed(2)}`;
+    }
+    totalEntradasEsaidas = totalEntradas - totalSaidas;
+    cardTotal.innerHTML = `${totalEntradasEsaidas.toFixed(2)}`;
+
+    // Código para gerar um novo array com as transações já existentes no array de transações - a transação que foi excluída:
+    transactionsArray = transactionsArray.filter((transaction) => {
+      return Number(transaction.id) !== Number(event.target.id);
+    });
+    localStorage.setItem(
+      "transactionsArray",
+      JSON.stringify(transactionsArray)
+    );
+  }
+}
