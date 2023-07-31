@@ -141,6 +141,15 @@ body {
   padding: 20px 32px;
   background-color: #ffffff;
 }
+.table table tbody td button {
+  width: 20px;
+  height: 20px;
+}
+.table table tbody td button img {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+}
 
 .modal {
   display: none;
