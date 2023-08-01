@@ -16,7 +16,6 @@ body {
   margin: 0 auto;
 }
 .banner .header button {
-  cursor: pointer;
   background-color: #ffc843;
   font-family: Poppins;
   font-size: 16px;
@@ -143,20 +142,22 @@ body {
   background-color: #ffffff;
 }
 .table table tbody td button {
-  width: 20px;
-  height: 20px;
+  border: none;
   border-radius: 50%;
-  cursor: pointer;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .table table tbody td button img {
   width: 22px;
   height: 22px;
+  padding: 2px;
+  border-radius: 50%;
   background: #ffffff;
 }
 .table table tbody td button img:hover {
   background: #f0f2f5;
-  padding: 2px;
-  border-radius: 50%;
   filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
 }
 
@@ -195,7 +196,6 @@ body {
   width: 100%;
 }
 .modal .content .button-close {
-  cursor: pointer;
   background-color: transparent;
   padding: 2px 10px;
   border-radius: 50px;
@@ -261,7 +261,6 @@ body {
   width: 200px;
 }
 .modal .content form .button-salvar {
-  cursor: pointer;
   background-color: #ffc843;
   border-radius: 5px;
   font-family: Poppins;

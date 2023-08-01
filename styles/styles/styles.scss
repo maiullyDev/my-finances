@@ -7,8 +7,6 @@ body {
 .banner {
   .header {
     button {
-      cursor: pointer;
-
       background-color: $amarelo;
 
       font-family: Poppins;
@@ -154,19 +152,22 @@ body {
         background-color: $branco;
 
         button {
-          width: 20px;
-          height: 20px;
+          border: none;
           border-radius: 50%;
-          cursor: pointer;
+          background: transparent;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           img {
             width: 22px;
             height: 22px;
+            padding: 2px;
+            border-radius: 50%;
             background: $branco;
             &:hover {
               background: $fundo-cinza;
-              padding: 2px;
-              border-radius: 50%;
               filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
             }
           }
@@ -207,7 +208,6 @@ body {
       width: 100%;
     }
     .button-close {
-      cursor: pointer;
       background-color: transparent;
       padding: 2px 10px;
       border-radius: 50px;
@@ -277,8 +277,6 @@ body {
         width: 200px;
       }
       .button-salvar {
-        cursor: pointer;
-
         background-color: $amarelo;
         border-radius: 5px;
 
