@@ -147,11 +147,9 @@ function calculatingValues() {
 // Utilizando o evento input para o campo de pesquisa:
 const searchField = document.querySelector("#searchField");
 searchField.addEventListener("input", () => {
-  console.log(searchField.value);
   const searchFieldResult = transactionsArray.filter((object) => {
     return object.title.includes(searchField.value);
   });
-  console.log(searchFieldResult);
 
   let tbodySearch = ``;
 
@@ -164,7 +162,7 @@ searchField.addEventListener("input", () => {
         <td><button id='${
           transaction.id
         }' onclick='removeTransaction(event)'><img id='${
-      transactionObject.id
+      transaction.id
     }' src="./assets/delete.png" alt="Excluir transação"/></button></td>
       </tr>`;
   }
